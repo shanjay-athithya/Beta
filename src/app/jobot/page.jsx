@@ -187,7 +187,7 @@ function App() {
                                     }`}
                                 disabled={generatingAnswer}
                             >
-                                {generatingAnswer ? 'Generating...' : 'Send'}
+                                {generatingAnswer ? 'Generating..' : 'Send'}
                             </button>
                         </div>
                     </footer>
