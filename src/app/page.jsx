@@ -143,6 +143,10 @@ function App() {
       "job hunting",
       "job application letter",
       "job seeker",
+      "javascript",
+      "python",
+      "game development",
+      'unity',
       "job search engine",
       "job market analysis",
       "job market trends",
@@ -266,7 +270,7 @@ function App() {
         <div className="w-full md:w-2/3 lg:w-1/2 flex flex-col bg-white shadow-lg rounded-lg overflow-hidden">
           <header className="bg-blue-700 text-white text-center p-4">
             <h1 className="text-2xl font-bold">
-              ChatBot For Job Opportunities
+              Beta
             </h1>
           </header>
           <div className="flex-1 overflow-y-auto p-4" id="chat-container">
