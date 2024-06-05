@@ -30,6 +30,6 @@
     "src/app/api/auth/[...nextauth]/route.js",
     "src/app/layout.tsx",
     "src/middleware.ts"
-  ],
+, "src/app/jobot/page.jsx"  ],
   "exclude": ["node_modules"]
 }

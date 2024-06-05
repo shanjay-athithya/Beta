@@ -1,34 +1,42 @@
-// pages/sign-in.tsx
-'use client';
-import { useEffect } from 'react';
-import { useClerk, useUser } from '@clerk/nextjs';
+'use client'
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { ClerkProvider, SignedIn, SignedOut, UserButton, useUser, SignInButton } from '@clerk/nextjs';
 
-const SignInPage = () => {
-    const { openSignIn } = useClerk();
-    const { isSignedIn } = useUser();
+function SignInContent() {
     const router = useRouter();
+    const { isSignedIn } = useUser();
 
     useEffect(() => {
         if (isSignedIn) {
-            router.push('/jobot');
+            router.push('/');
         }
     }, [isSignedIn, router]);
 
-    const handleSignIn = async () => {
-        try {
-            await openSignIn();
-        } catch (error) {
-            console.error("Sign-in failed", error);
-        }
-    };
-
     return (
         <div>
-            <h1>Sign In</h1>
-            <button onClick={handleSignIn}>Sign In</button>
+            <SignedOut>
+                <div>
+                    <h1>Welcome to Our App</h1>
+                    <SignInButton mode="redirect">
+                        <button>Sign In</button>
+                    </SignInButton>
+                </div>
+            </SignedOut>
+            <SignedIn>
+                <div>
+                    <UserButton />
+                    {/* Optionally show some content here while redirecting */}
+                </div>
+            </SignedIn>
         </div>
     );
-};
+}
 
-export default SignInPage;
+export default function SignInPage() {
+    return (
+        <ClerkProvider>
+            <SignInContent />
+        </ClerkProvider>
+    );
+}

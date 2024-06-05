@@ -1,3 +1,5 @@
+
+
 import { ClerkProvider, RedirectToSignIn, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import './globals.css';
 
@@ -7,22 +9,22 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
+    // <ClerkProvider>
       <html lang="en">
         <body>
           <header>
-          <SignedOut>
+          {/* <SignedOut>
               <RedirectToSignIn />
             </SignedOut>
             <SignedIn>
               <UserButton />
-            </SignedIn>
+            </SignedIn> */}
           </header>
           <main>
             {children}
           </main>
         </body>
       </html>
-    </ClerkProvider>
+    // {/* </ClerkProvider> */}
   )
 } 
