@@ -133,12 +133,14 @@ function App() {
 
     return (
         <ClerkProvider>
-            <div className="bg-gray-900 min-h-screen flex flex-col items-center justify-center">
+            <div className="bg-pink-900 min-h-screen flex flex-col items-center justify-center">
                 <div className="w-full md:w-2/3 lg:w-1/2 flex flex-col bg-white shadow-lg rounded-lg overflow-hidden">
-                    <header className="bg-blue-700 text-white text-center p-4 flex justify-between items-center">
+                    <header className="bg-pink-600 text-red text-center p-4 flex justify-between items-center">
+
+
                         <h1 className="text-2xl font-bold">Beta</h1>
                         <SignOutButton>
-                            <button className="bg-red-600 text-white py-1 px-3 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 hover:bg-red-700">
+                            <button className="bg-white-600 text-red py-1 px-3 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 hover:bg-red-700">
                                 Logout
                             </button>
                         </SignOutButton>
@@ -148,7 +150,7 @@ function App() {
                             <div
                                 key={index}
                                 className={`my-2 p-3 max-w-xs rounded-lg ${message.type === 'question'
-                                    ? 'bg-blue-600 text-white self-end ml-auto'
+                                    ? 'bg-pink-400 text-white self-end ml-auto'
                                     : 'bg-gray-200 text-gray-900 self-start mr-auto'
                                     }`}
                                 style={{
@@ -157,7 +159,7 @@ function App() {
                                 }}
                             >
                                 <ReactMarkdown className="prose prose-sm">{message.text}</ReactMarkdown>
-                                <p className="text-xs text-gray-500 mt-1">{message.timestamp.toLocaleString()}</p>
+                                <p className="text-xs text-white-500 mt-1">{message.timestamp.toLocaleString()}</p>
                             </div>
                         ))}
                         {generatingAnswer && (
@@ -171,7 +173,7 @@ function App() {
                         <div className="flex">
                             <textarea
                                 required
-                                className="flex-1 border rounded-lg p-2 mr-2 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-shadow"
+                                className="flex-1 border rounded-lg p-2 mr-2 focus:outline-none focus:ring-2 focus:ring-pink-300 transition-shadow"
                                 value={question}
                                 onChange={(e) => setQuestion(e.target.value)}
                                 onKeyDown={handleKeyDown}
@@ -183,7 +185,7 @@ function App() {
                             <button
                                 ref={buttonRef}
                                 onClick={generateAnswer}
-                                className={`bg-blue-600 text-white py-2 px-4 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300 disabled:opacity-50 ${generatingAnswer ? 'animate-pulse' : 'hover:bg-blue-700'
+                                className={`bg-pink-600 text-white py-2 px-4 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-red-300 disabled:opacity-50 ${generatingAnswer ? 'animate-pulse' : 'hover:bg-red-400'
                                     }`}
                                 disabled={generatingAnswer}
                             >
