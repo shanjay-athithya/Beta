@@ -34,12 +34,12 @@ function SignInContent() {
                 </SignedIn>
             </div>
 
-            <div className="bg-red-100 p-8 rounded-lg shadow-lg text-center w-full max-w-2xl">
+            <div className="bg-red-100 p-8 rounded-lg shadow-lg text-center w-full max-w-md">
                 <h2 className="text-2xl font-bold mb-4 text-pink-600">About Our App</h2>
                 <p className="mb-4 text-gray-900">
                     Our app helps you navigate your career with ease. Discover job opportunities, get career advice, and connect with professionals.
                 </p>
-                <h3 className="text-xl font-semibold mb-2 text-red-600">Features:</h3>
+                <h3 className="text-xl font-bold mb-2 text-red-600">Features:</h3>
                 <ul className="list-disc list-inside text-left mb-5 text-gray-900">
                     <li>Job Search</li>
                     <li>Resume Builder</li>
