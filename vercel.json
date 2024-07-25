@@ -1,0 +1,8 @@
+{
+    "functions": {
+      "api/edge-function.js": {
+        "runtime": "edge"
+      }
+    }
+  }
+  
