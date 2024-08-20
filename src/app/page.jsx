@@ -14,42 +14,51 @@ function SignInContent() {
     }, [isSignedIn, router]);
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-red-500 to-pink-500 p-4 space-y-8">
-            <div className="bg-red-100 p-8 rounded-lg shadow-lg text-center w-full max-w-md">
-                <SignedOut>
-                    <div>
-                        <h1 className="text-3xl font-bold mb-4 text-pink-600">Welcome to Beta</h1>
-                        <p className="mb-6 text-gray-900">Join us to explore job opportunities, career tips, and more.</p>
+        <div
+            className="min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
+            style={{
+                backgroundImage: "url('/image/job.png')",
+            }}
+        >
+            {/* Main container with max-width and padding */}
+            <div className="flex flex-col items-center justify-center w-full max-w-3xl space-y-10 p-6 md:p-10 lg:p-16 bg-white bg-opacity-70 rounded-lg shadow-2xl">
+                
+                {/* Sign In Section */}
+                <div className="w-full text-center">
+                    <SignedOut>
+                        <h1 className="text-5xl font-extrabold mb-6 text-purple-900">Welcome to Beta</h1>
+                        <p className="mb-8 text-lg text-black font-medium">
+                            Join us to explore job opportunities, career tips, and more.
+                        </p>
                         <SignInButton mode="redirect">
-                            <button className="px-4 py-2 bg-pink-600 text-white rounded hover:bg-red-700">
+                            <button className="px-6 py-3 font-semibold bg-purple-900 text-white rounded-full hover:bg-purple-700 transition duration-300">
                                 Try Beta
                             </button>
                         </SignInButton>
-                    </div>
-                </SignedOut>
-                <SignedIn>
-                    <div>
-                        <UserButton />
-                    </div>
-                </SignedIn>
-            </div>
+                    </SignedOut>
+                    <SignedIn>
+                        <div className="flex items-center justify-center">
+                            <UserButton />
+                        </div>
+                    </SignedIn>
+                </div>
 
-            <div className="bg-red-100 p-8 rounded-lg shadow-lg text-center w-full max-w-md">
-                <h2 className="text-2xl font-bold mb-4 text-pink-600">About Our App</h2>
-                <p className="mb-4 text-gray-900">
-                    Our app helps you navigate your career with ease. Discover job opportunities, get career advice, and connect with professionals.
-                </p>
-                <h3 className="text-xl font-bold mb-2 text-red-600">Features:</h3>
-                <ul className="list-disc list-inside text-left mb-5 text-gray-900">
-                    <li>Job Search</li>
-                    <li>Resume Builder</li>
-                    <li>Interview Tips</li>
-                    <li>Professional Networking</li>
-                </ul>
-                <p className="text-pink-600 font-semibold">&copy; 2024 Beta. All rights reserved.</p>
+                {/* About Section */}
+                <div className="w-full text-center">
+                    <h2 className="text-4xl font-bold mb-6 text-purple-900">About Our App</h2>
+                    <p className="mb-6 text-lg text-black font-medium">
+                        Our app helps you navigate your career with ease. Discover job opportunities, get career advice, and connect with professionals.
+                    </p>
+                    <h3 className="text-2xl font-semibold mb-4 text-purple-900">Features:</h3>
+                    <ul className="list-disc list-inside  mb-6 text-black font-medium">
+                        <li>Job Search</li>
+                        <li>Resume Builder</li>
+                        <li>Interview Tips</li>
+                        <li>Professional Networking</li>
+                    </ul>
+                    <p className="text-purple-900 font-bold">&copy; 2024 Beta. All rights reserved.</p>
+                </div>
             </div>
-
-            
         </div>
     );
 }
